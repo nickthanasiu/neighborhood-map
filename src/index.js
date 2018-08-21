@@ -1,11 +1,26 @@
 import './css/main.css';
 
-function main() {
-  let main = document.createElement('div');
-  $(main).addClass('main');
-  $(main).html('This is the main div');
+// DOM is populated when window is ready
+$(function() {
+  // Create the main container div
 
-  return main;
+  function main() {
+    let main = document.createElement('div');
+    $(main)
+      .addClass('main')
+      .html('This is the main div');
+
+    return main;
+  }
+
+  document.body.appendChild(main());
+
+
+});
+// Create the Navigation Sidebar
+/*
+function sideBar() {
+  let sidebar = document.createElement()
 }
 
-document.body.appendChild(main());
+*/

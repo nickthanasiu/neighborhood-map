@@ -151,7 +151,7 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader!./m
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./css/main.css */ \"./src/css/main.css\");\n\nfunction main() {\n  var main = document.createElement('div');\n  $(main).addClass('main');\n  $(main).html('This is the main div');\n\n  return main;\n}\n\ndocument.body.appendChild(main());\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\n__webpack_require__(/*! ./css/main.css */ \"./src/css/main.css\");\n\n// DOM is populated when window is ready\n$(function () {\n  // Create the main container div\n\n  function main() {\n    var main = document.createElement('div');\n    $(main).addClass('main').html('This is the main div');\n\n    return main;\n  }\n\n  document.body.appendChild(main());\n});\n// Create the Navigation Sidebar\n/*\nfunction sideBar() {\n  let sidebar = document.createElement()\n}\n\n*/\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
