@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \".main {\\n  background-color: lightblue;\\n  height: 100vh;\\n  width: 100vw;\\n}\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/css/main.css?./node_modules/css-loader");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \".main {\\n  background-color: lightblue;\\n  height: 100vh;\\n  width: 100vw;\\n}\\n\\n.sidebar {\\n  background-color: green;\\n  margin: 1rem;\\n}\\n\\n.sidebar-header {\\n  background-color: yellow;\\n  margin: 1rem;\\n}\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/css/main.css?./node_modules/css-loader");
 
 /***/ }),
 
@@ -151,7 +151,19 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader!./m
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./css/main.css */ \"./src/css/main.css\");\n\n// DOM is populated when window is ready\n$(function () {\n  // Create the main container div\n\n  function main() {\n    var main = document.createElement('div');\n    $(main).addClass('main').html('This is the main div');\n\n    return main;\n  }\n\n  document.body.appendChild(main());\n});\n// Create the Navigation Sidebar\n/*\nfunction sideBar() {\n  let sidebar = document.createElement()\n}\n\n*/\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nvar _locations = __webpack_require__(/*! ./locations */ \"./src/locations.js\");\n\nvar _locations2 = _interopRequireDefault(_locations);\n\n__webpack_require__(/*! ./css/main.css */ \"./src/css/main.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// DOM is populated when window is ready\n$(function () {\n  // Create the main container div\n\n  function main() {\n    var main = document.createElement('div');\n    $(main).addClass('main').html('This is the main div');\n\n    function sideBar() {\n      var sideBar = document.createElement('nav');\n      $(sideBar).addClass('sidebar hidden').html('THIS IS THE SIDEBAR').append('\\n            <div class=\"sidebar-header\">\\n              <form>\\n                <input\\n                  class=\"search\"\\n                  type=\"search\"\\n                  placeholder=\"Search for a location\"\\n                />\\n              </form>\\n            </div>\\n          ').append('\\n            <div class=\"sidebar-list-wrapper\">\\n              <ul class=\"sidebar-list list-unstyled components\">\\n                ' + _locations2.default.map(function (location) {\n        return '<li>\\n                      ' + location.name + '\\n                    </li>';\n      }) + '\\n              </ul>\\n            </div>\\n          ');\n\n      return sideBar;\n    }\n\n    $(main).append(sideBar);\n    return main;\n  }\n\n  $(document.body).append(main);\n});\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/locations.js":
+/*!**************************!*\
+  !*** ./src/locations.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\n// Locations to appear on the map\nvar locations = [{\n  name: 'Black Kite Coffee & Pies',\n  lat: 41.670830,\n  lng: -83.555525\n}, {\n  name: 'Claro Coffee Bar',\n  lat: 41.658471,\n  lng: -83.546227\n}, {\n  name: 'Toledo Museum of Art',\n  lat: 41.658327,\n  lng: -83.559325\n}, {\n  name: 'Fifth Third Field',\n  lat: 41.648569,\n  lng: -83.538661\n}];\n\nmodule.exports = locations;\n\n//# sourceURL=webpack:///./src/locations.js?");
 
 /***/ })
 

@@ -3,3 +3,13 @@
   height: 100vh;
   width: 100vw;
 }
+
+.sidebar {
+  background-color: green;
+  margin: 1rem;
+}
+
+.sidebar-header {
+  background-color: yellow;
+  margin: 1rem;
+}
